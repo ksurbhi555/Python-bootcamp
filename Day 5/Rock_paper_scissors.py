@@ -48,7 +48,7 @@ else:
 if random_choice==your_choice:
   print("Draw")
 elif random_choice==0 and your_choice==1:
- print("computer wins.")
+ print("you wins.")
   
 elif random_choice==0 and your_choice==2:
  print("computer wins.")
@@ -63,4 +63,4 @@ elif random_choice==2 and your_choice==0:
  print("you wins.")
   
 elif random_choice==2 and your_choice==1:
- print("you wins.")
+ print("Computer wins.")
