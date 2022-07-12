@@ -1,21 +1,42 @@
-numbers=input("Enter your class scores ").split(",")
-for n in range(0,len(numbers)):
-  numbers[n]=int(numbers[n])
+from tabulate import tabulate
+name=input("What is your name? ")
+standard=(input("Your class? "))
 
+maths=input("How much did you scored in maths? ") 
+sci=input("How much did you scored in science? ")  
+sst=input("How much did you scored in SST? ") 
+hin=input("How much did you scored in hindi? ") 
+eng=input("How much did you scored in english? ") 
+bt=input("How much did you scored in biotech? ") 
+print(".................................................................................")
+txt = "SCORE CARD"
 
-total_scores=sum(numbers)
-print(f"Total scores are:{ total_scores}")
+x = txt.center(90)
 
-total_students=0
-for students in numbers:
-  total_students=(total_students)+1
-print(f"Total number of students are: { total_students}")
+print(x)
+print(".................................................................................")
+print(f"NAME:{name}")
+print(f"CLASS:{standard}")
 
-Average_score=round(total_scores/total_students)
-print(f"The average score is: { Average_score}")
+mydata = [
+    ["Maths",(maths),"80"],
+    ["Science",(sci),"80"],
+    ["SST",(sst),"80" ],
+    ["Hindi", (hin),"80"],
+    ["English",(eng),"80"],
+    ["Biotech",(bt),"80"]
+    
+]
+ 
+head = ["Subject", "Scores Obtained","Max Scores"]
+ 
+print(tabulate(mydata, headers=head, tablefmt="grid"))
 
-maximum=max(numbers)
-print(f"Maximum marks obtained: {maximum}")
+total=int(maths)+int(sci)+int(sst)+int(hin)+int(eng)+int(bt)
+print(f"Total marks obtained: {total}")
+print("Maximum marks: 480")
 
-minimum=min(numbers)
-print(f"Minimum marks obtained:{ minimum}")
+percent=round((total)/4.8,2)
+print(f"PERCENTAGE OBTAINED: {percent}%")
+
+print(".................................................................................")
